@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            margin: 0;
+            padding: 20px;
+            font-family: 'Orbitron', sans-serif;
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .game-container {
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        canvas {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 149, 221, 0.3),
+                        inset 0 0 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 480px;
+            margin-bottom: 20px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .game-info span {
+            font-size: 18px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .score-value {
+            color: #00ff9d;
+            margin-left: 8px;
+            font-size: 20px !important;
+        }
+        
+        .game-title {
+            font-size: 36px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 149, 221, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        .stat-container {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="game-title">BREAKOUT</h1>
+    <div class="game-info">
+        <div class="stat-container">
+            <span>LIVES:</span>
+            <span id="lives" class="score-value">3</span>
+        </div>
+        <div class="stat-container">
+            <span>SCORE:</span>
+            <span id="score" class="score-value">0</span>
+        </div>
+        <div class="stat-container">
+            <span>HIGH:</span>
+            <span id="highScore" class="score-value">0</span>
+        </div>
+    </div>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="480" height="320"></canvas>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
